@@ -1,50 +1,25 @@
 import os
 os.system('cls')
 
-import os
-os.system('cls')
 
-vetor_temperatura = []
-vetor_dias = []
+vetor_temperaturas = []
+QUANTIDADE_DIAS = 7
 
-while True:
-    print('''
-codigo              dias                temperatura
-1                   segunda               0
-2                   terça                 20
-3                   quarta                18
-4                   quinta                15
-5                    sexta                 5
-6                    sabado               30
-7                     domingo             40
-''')
-    opcao = int(input('digite a opçao desejada: '))
+for dia in range(1, 8):
+    temperatura = float(input(f'Digite a temperatura do dia {dia}º: '))
+    vetor_temperaturas.append(temperatura)
 
-    match opcao:
-        case '1':
-            dias = 'segunda'
-            temperatura = 0
-        case '2':
-            dias = 'terça'
-            temperatura = 20
-        case '3':
-            dias ='quarta'
-            temperatura = 18
-        case '4':
-            dias = 'quinta'
-            temperatura = 15
-        case '5':
-            dias = 'sexta'
-            temperatura = 5
-        case '6':
-            dias = 'sabado'
-            temperatura =30
-        case '7':
-            dias = 'domingo'
-            temperatura =40
-        case _:
-            print('opcao invalida')
 
-    if opcao >= 1 and opcao <= 5:
-        vetor_dias.append(dias)
-        vetor_temperatura.append(temperatura)
+media = sum(vetor_temperaturas) / QUANTIDADE_DIAS
+maior = max(vetor_temperaturas)
+menor = min(vetor_temperaturas)
+
+
+print('\nTemperaturas registradas:')
+for dia, temperatura in enumerate(vetor_temperaturas, start=1):
+    print(f'Dia {dia}: {temperatura:.1f} °C')
+
+
+print(f'\nMédia da semana: {media:.1f} °C')
+print(f'Maior temperatura: {maior:.1f} °C')
+print(f'Menor temperatura: {menor:.1f} °C')

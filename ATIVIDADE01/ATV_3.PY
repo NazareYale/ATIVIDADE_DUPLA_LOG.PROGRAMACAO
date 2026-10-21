@@ -2,7 +2,7 @@ import os
 os.system('cls')
 
 vetor_numeros = []
-QUANTIDADE_LOOPS = 2
+QUANTIDADE_LOOPS = 10
 maiores = 0
 
 for i in range(QUANTIDADE_LOOPS):
